@@ -1,14 +1,14 @@
 public class Compare {
     private  double priceS;
     private  double price;
-    private double spread;
+    private double commission;
     private  double priceB;
 
-    public Compare(double spread, double price) {
-        this.spread = spread;
+    public Compare(double commission, double price) {
+        this.commission = commission;
         this.price = price;
-        this.priceS = this.price + price*spread/100;
-        this.priceB = price - price*spread/100;
+        this.priceS = this.price + price*commission/100;
+        this.priceB = price - price*commission/100;
     }
 
     public double getPriceB() {
@@ -28,10 +28,10 @@ public class Compare {
             this.price = price;
     }
 
-    public void setSpread(double spread) {
-        this.spread = spread;
-        this.priceS = this.price + this.price*spread/100;
-        this.priceB = this.price - this.price*spread/100;
+    public void setCommission(double commission) {
+        this.commission = commission;
+        this.priceS = this.price + this.price*commission/100;
+        this.priceB = this.price - this.price*commission/100;
     }
 
     public  void updatePrice(double Newp){
@@ -41,6 +41,6 @@ public class Compare {
 
     public  void  UpdateSpread(double spread){
         if (spread >= 0) // Some additional logic
-            this.setSpread(spread);
+            this.setCommission(spread);
     }
 }
