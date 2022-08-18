@@ -7,7 +7,7 @@ public class User {
 
     public  User(String name){
         this.UName = name;
-        //this.WalletId = Math.random()%1000;
+        this.WalletId = (int)Math.random()%1000;
     }
 
     public String getUName() {
