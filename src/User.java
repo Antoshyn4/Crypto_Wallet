@@ -35,4 +35,15 @@ public class User {
     public HashMap<Compare, Double> getHashMap() {
         return new HashMap<Compare, Double>(hashMap); //return copy because of security
     }
+    public  void  Send(User recipient, Compare compare, double amount){
+        if (amount < 0)
+            return;
+        if (amount > this.hashMap.get(compare)){
+            System.out.println("Not enough balance");
+            return;
+        }
+        recipient.hashMap.put(compare,amount);
+        this.hashMap.put(compare,this.hashMap.get(compare) - amount);
+    }
+
 }
