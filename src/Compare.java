@@ -20,17 +20,13 @@ public class Compare {
             this.price = price;
     }
 
-    public void setCommission(double commission) {
-        this.commission = commission;
+    private void setCommission(double commission) {
+        if (commission >= 0)
+            this.commission = commission;
     }
 
-    public  void updatePrice(double Newp){
+    protected void updatePrice(double Newp){
         if (Newp > 0) // Some additional logic
             this.setPrice(Newp);
-    }
-
-    public  void  UpdateSpread(double spread){
-        if (spread >= 0) // Some additional logic
-            this.setCommission(spread);
     }
 }

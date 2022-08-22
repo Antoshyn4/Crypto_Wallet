@@ -19,8 +19,7 @@ public class User {
         return WalletId;
     }
     public  void convert(Compare from, Compare to){
-        Exchange exchange = new Exchange();
-        hashMap.put(to,exchange.convert(from,to,this.hashMap.get(from)));
+        hashMap.put(to,Exchange.getInstance().convert(from,to,this.hashMap.get(from)));
         hashMap.put(from,0.0);
     }
     public void Deposit(Compare compare, double amount){
