@@ -1,11 +1,10 @@
+import java.io.IOException;
+
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         User user = new User("Dima");
         user.Deposit(Exchange.BTC,100);
-        //user.convert(Exchange.USD,Exchange.EUR);
         User user1 = new User("Anton");
-        user.Send(user1,Exchange.BTC,user.getHashMap().get(Exchange.BTC)*0.6);
-        System.out.println(user.getHashMap().values());
-        System.out.println(user1.getHashMap().values());
-        }
+        System.out.println(Connection.getPrice("ETH"));
+    }
 }

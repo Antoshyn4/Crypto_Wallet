@@ -21,16 +21,10 @@ final public class Exchange {
     }
 
     public void Refresh_Prices(){
-        double PriceETH = 0.9;
-        double PriceBTC = 1;
-        double PriceSOL = 38;
-        double PriceNEAR = 4.69;
-        // Getting new prices from somewhere
-
-        ETH.updatePrice(PriceETH);
-        BTC.updatePrice(PriceBTC);
-        SOL.updatePrice(PriceSOL);
-        NEAR.updatePrice(PriceNEAR);
+        ETH.updatePrice(Connection.getPrice("ETH"));
+        BTC.updatePrice(Connection.getPrice("BTC"));
+        SOL.updatePrice(Connection.getPrice("SOL"));
+        NEAR.updatePrice(Connection.getPrice("ETC"));
     }
 
 }
